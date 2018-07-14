@@ -1,0 +1,11 @@
+{
+  "name": "redux-rn-misc-state",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "yarn test"
+  },
+  "author": "",
+  "license": "Apache-2.0"
+}
