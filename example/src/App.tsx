@@ -1,5 +1,28 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import {
+  AppStateStatus,
+  ConnectionInfo,
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+import { connect } from 'react-redux';
+import { State } from './reducer';
+
+interface Props {
+  state: AppStateStatus;
+  info: ConnectionInfo | undefined;
+  isConnected: boolean | undefined;
+}
+
+const mapStateToProps = (state: State): any => {
+  return {
+    appState: state.appState.state,
+    netInfo: state.netInfo.info,
+    isConnected: state.netInfo.isConnected,
+  };
+};
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\nCmd+D or shake for dev menu',
@@ -26,9 +49,14 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class App extends Component {
+class App extends Component<Props> {
   constructor(props) {
     super(props);
+  }
+
+  componentDidUpdate() {
+    // tslint:disable-next-line:no-console
+    console.log(this.props);
   }
 
   render() {
@@ -40,3 +68,8 @@ export default class App extends Component {
     );
   }
 }
+
+export default connect(
+  mapStateToProps,
+  undefined,
+)(App);
