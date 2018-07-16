@@ -5,7 +5,7 @@ export interface AppStateState {
   state: AppStateStatus;
 }
 
-const initialState: AppStateState = {
+export const initialState: AppStateState = {
   state: AppState.currentState,
 };
 

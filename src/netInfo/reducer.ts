@@ -6,7 +6,7 @@ export interface NetInfoState {
   info: ConnectionInfo | undefined;
 }
 
-const initialState: NetInfoState = {
+export const initialState: NetInfoState = {
   isConnected: undefined,
   info: undefined,
 };

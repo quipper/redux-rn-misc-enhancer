@@ -4,14 +4,16 @@ import {
   NetInfo,
   Platform,
 } from 'react-native';
-import { Store } from 'redux';
+import { StoreEnhancer, StoreEnhancerStoreCreator } from 'redux';
 import { connectionChangeAction, connectivityChangeAction } from './action';
 
-export default () => (createStore: () => Store) => {
-  const store = createStore();
+export default (): StoreEnhancer => <S>(
+  createStore: StoreEnhancerStoreCreator<S>,
+): StoreEnhancerStoreCreator => (reducer, preloadedState) => {
+  const store = createStore(reducer, preloadedState);
 
   const handleConnectivityChange = (isConnected: boolean) => {
-    store.dispatch(connectivityChangeAction(isConnected));
+    store.dispatch<any>(connectivityChangeAction(isConnected));
   };
 
   NetInfo.isConnected.addEventListener(
@@ -29,7 +31,7 @@ export default () => (createStore: () => Store) => {
     if (typeof info === 'string') {
       return;
     }
-    store.dispatch(connectionChangeAction(info));
+    store.dispatch<any>(connectionChangeAction(info));
   };
 
   NetInfo.addEventListener('connectionChange', handleConnectionChange);
