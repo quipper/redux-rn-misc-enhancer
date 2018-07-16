@@ -1,20 +1,12 @@
 import { AppState, AppStateStatus } from 'react-native';
 import { Store } from 'redux';
+import { appStateChangeAction } from './action';
 
 export default () => (createStore: () => Store) => {
   const store = createStore();
 
-  let currentState = AppState.currentState;
-
   const handleAppStateChange = (nextState: AppStateStatus) => {
-    if (currentState === nextState) {
-      return;
-    }
-    store.dispatch({
-      type: 'CHANGE_EVENT',
-      payload: nextState,
-    });
-    currentState = nextState;
+    store.dispatch(appStateChangeAction(nextState));
   };
 
   AppState.addEventListener('change', handleAppStateChange);
