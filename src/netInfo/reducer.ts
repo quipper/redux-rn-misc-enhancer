@@ -3,7 +3,7 @@ import { NetInfoAction } from './action';
 
 export interface NetInfoState {
   isConnected: boolean | undefined;
-  info: ConnectionInfo;
+  info: ConnectionInfo | undefined;
 }
 
 const initialState: NetInfoState = {
@@ -24,7 +24,7 @@ export default function reducer(
           return { info: state.info, isConnected: action.payload };
         }
       }
-      break;
+      return state;
     case 'CONNECTION_CHANGE':
       if (typeof action.payload !== 'boolean') {
         if (state.info === action.payload) {
@@ -33,7 +33,7 @@ export default function reducer(
           return { info: action.payload, isConnected: state.isConnected };
         }
       }
-      break;
+      return state;
     default:
       return state;
   }
