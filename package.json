@@ -1,5 +1,5 @@
 {
-  "name": "redux-rn-misc-state",
+  "name": "redux-rn-misc-events",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
@@ -9,11 +9,16 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
+    "react": "^16.4.1",
     "react-native": "^0.56.0",
     "redux": "^4.0.0"
   },
   "devDependencies": {
+    "@types/react": "^16.4.6",
     "@types/react-native": "^0.56.1",
+    "@types/redux": "^3.6.0",
+    "prettier": "^1.13.7",
+    "tslint": "^5.10.0",
     "typescript": "^2.9.2"
   }
 }
