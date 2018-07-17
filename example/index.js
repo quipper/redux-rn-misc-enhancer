@@ -1,3 +1,3 @@
-import start from './build/root';
+import { start } from './build/root';
 
 start();
