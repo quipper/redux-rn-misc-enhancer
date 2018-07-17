@@ -4,8 +4,16 @@
 
 ## Installation
 
+#### yarn
+
 ```sh
 yarn add redux-rn-misc-enhancer
+```
+
+#### npm
+
+```sh
+npm install redux-rn-misc-enhancer
 ```
 
 ## Usage
@@ -28,7 +36,7 @@ const enhancer = compose(
 const store = createStore(reducers, initialState, enhancer);
 ```
 
-2. Reducer
+### 2. Reducer
 
 Add `appStateReducer` and `netInfoReducer`(and other stuff) to your redux reducer.
 
@@ -63,9 +71,9 @@ const rootReducer = (state: State, action: Action) => appReducer(state, action);
 export default rootReducer;
 ```
 
-And that's it! You can receive app state and network info changes from redux store in any React components.
+And that's it! You can receive app state and network info changes from your redux store in any React components.
 
-For more detail check [example](https://github.com/quipper/redux-rn-misc-enhancer/tree/master/example) app.
+For more detail check [example](https://github.com/quipper/redux-rn-misc-enhancer/tree/master/example) app and React Native API docs([AppState](https://facebook.github.io/react-native/docs/appstate), [NetInfo](https://facebook.github.io/react-native/docs/netinfo)).
 
 ## Licence
 
