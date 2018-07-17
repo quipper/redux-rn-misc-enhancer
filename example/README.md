@@ -1,7 +1,6 @@
-# react-native-i18n-ts example
+# redux-rn-misc-enhancer example
 
 ```sh
-npm install
-npm i18n-ts # or i18n-ts:watch
-npm start:ios # or start:android
+yarn install
+yarn start:ios # or start:android
 ```
