@@ -1,15 +1,21 @@
 {
   "name": "redux-rn-misc-enhancer",
   "version": "0.1.0",
-  "description": "",
+  "description": "A light weight wrapper of AppState and NetInfo which connects those changes directly to your Redux store.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "repository": "https://github.com/quipper/redux-rn-misc-enhancer",
+  "bugs": "https://github.com/quipper/redux-rn-misc-enhancer/issues",
+  "keywords": [
+    "react-native",
+    "redux"
+  ],
+  "author": "Shintaro Katafuchi",
+  "license": "Apache-2.0",
   "scripts": {
     "tsc": "tsc",
     "test": "jest"
   },
-  "author": "",
-  "license": "Apache-2.0",
   "peerDependencies": {
     "react": "^16.4.1",
     "react-native": "^0.56.0",

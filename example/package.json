@@ -16,7 +16,8 @@
     "react": "16.3.1",
     "react-native": "^0.56.0",
     "react-redux": "^5.0.7",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "redux-rn-misc-enhancer": "^0.1.0"
   },
   "devDependencies": {
     "@types/react": "^16.3.13",
